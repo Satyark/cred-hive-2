@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('/public/font/FontsFree-Net-Jeko-Medium.ttf');
 
+@font-face {
+  font-family: "Jeko";
+  src: url("../public/font/FontsFree-Net-Jeko-Medium.ttf");
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,11 +22,21 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* color: rgb(var(--foreground-rgb)); */
+  background-image: url('https://app.pfida.com/img/vuexy-login-bg.04351a33.jpg');
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+}
+
+input[type="date"] {
+  /* Reset styles */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  /* Optional: Add more styling as needed */
 }

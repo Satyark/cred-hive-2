@@ -2,7 +2,7 @@
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FaEnvelope, FaMobile,FaMale, FaLockOpen,FaLock,FaUserAlt } from 'react-icons/fa';
+import { FaEnvelope, FaMobile,FaMale, FaLockOpen,FaLock,FaUserAlt, FaCalendar } from 'react-icons/fa';
 import { MdLockOutline } from 'react-icons/md';
 
 function Page() {
@@ -17,13 +17,9 @@ function Page() {
 
   const handleSignup = () => {
     if(name===""){
-        setErrorMessage("Please enter your first name")
+        setErrorMessage("Please enter your name")
         return;
     }
-    // if(lastName===""){
-    //     setErrorMessage("Please enter your last name")
-    //     return;
-    // }
     if(date===""){
         setErrorMessage("Please enter your DOB")
         return;
@@ -65,17 +61,17 @@ function Page() {
   };
 
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen py-2 bg-violet-400'>
+    <div className='flex flex-col items-center justify-center min-h-screen py-2 font-jeko'>
       <main className="flex flex-col items-center justify-center flex-1 px-20 text-center">
         <div className="bg-white rounded-xl shadow-2xl flex max-w-4xl">
           <div className='text-black p-5'>
             <div className='text-center font-bold pt-3'>
-              <span className='text-violet-400 text-5xl'>Cred</span><span className='text-5xl'>Hive</span>
+              <span className='text-myColor text-5xl'>Cred</span><span className='text-5xl'>Hive</span>
             </div>
 
             <div className="py-5">
               <h2 className='text-xl font-bold text-black mb-2'>Sign up to create an account.</h2>
-              <h2 className='text-sm font-bold text-gray-700 mb-2'>Already have an account?<Link href="/login" className='text-violet-400'> Login</Link></h2>
+              <h2 className='text-sm font-bold text-gray-500 mb-2'>Already have an account?<Link href="/login" className='text-myColor'> Login</Link></h2>
             </div>
 
             <div className='flex flex-col items-center '>
@@ -92,19 +88,8 @@ function Page() {
                 />
               </div>
             
-              {/* <div className='bg-gray-200 w-64 p-2 flex items-center mb-3'> 
-              <FaMale className='text-grey-200 m-2' />
-                <input
-                  type="text"
-                  name='lastName'
-                  placeholder='Last Name'
-                  className='bg-gray-200 outline-none text-sm flex-1'
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </div> */}
               <div className='bg-gray-200 w-64 p-2 flex items-center mb-3 justify-between'>
-                 
+               <FaCalendar className='text-grey-200 m-2' />
                 <input
                   type="date"
                   name='date'
@@ -176,8 +161,8 @@ function Page() {
 
               <button
                 onClick={handleSignup}
-                className='border-2 border-violet-400 text-violet-400 rounded-full py-2 px-12 inline-block font-semibold
-                 hover:bg-violet-400 hover:text-white pt-2'
+                className='border-2 border-myColor text-myColor rounded-full py-2 px-12 inline-block font-semibold
+                 hover:bg-myColor hover:text-white pt-2'
               >
                 Sign Up
               </button>
